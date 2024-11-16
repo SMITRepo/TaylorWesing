@@ -1,0 +1,21 @@
+﻿@model TaylorWessing.Models.Matter?
+
+<div class="matter-details">
+    @if (Model != null) {
+        <h3>@Model?.MatterName</h3>
+        <p><strong>Matter Id:</strong> @Model?.MatterId</p>
+    <p><strong>Matter Code:</strong> @Model?.MatterCode</p>
+        <p><strong>Description:</strong> @Model?.MatterDescription</p>
+        if (Model.MatterDate.HasValue) {
+            <p><strong>Date:</strong> @Model?.MatterDate.Value.ToString("MM/dd/yyyy")</p>
+        }
+
+    }
+    else
+    {
+        
+    <p> No matter exists for client.</p>
+    }
+
+
+</div>

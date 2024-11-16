@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Client Search";
+}
+
+<h2>Client Search</h2>
+<div id="ErrorDisplay"></div>
+<div id="search-container">
+    <table>
+        <tr><td><input type="text" id="search-term" placeholder="Enter client name" /></td></tr>
+
+        <tr>
+            <td>
+                <select id="sort" placeholder="Sort Type">
+                    <option value=1>Name Asc</option>
+                    <option value=2>Name Desc</option>
+                    <option value=3>Date Asc</option>
+                    <option value=4>Date Desc</option>
+
+                </select>
+            </td>
+        </tr>
+
+        <tr><td><button id="search-button">Search</button></td></tr>
+
+
+    </table>
+</div>
+
+<div id="result-container"></div>
+
+@section Scripts {
+    <script src="~/js/client.js"></script>
+}

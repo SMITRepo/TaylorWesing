@@ -1,0 +1,34 @@
+﻿@model MatterSearchResult
+
+
+
+@if (Model != null && Model.TotalResults > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Matter ID</th>
+                <th>Matter Code</th>
+                <th>Matter Name</th>
+                <th>Inception Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var matter in Model.Results)
+            {
+                <tr>
+                    <td>@matter.MatterId</td>
+                    <td>@matter.MatterCode</td>
+                    <td>@matter.MatterName</td>
+                    <td>@matter.MatterDate?.ToString("yyyy-MM-dd")</td>
+                    <td><a href="javascript:void(0);" onclick="showMatterDetails('@matter.MatterId')">View Detail</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+        <p>@(Model?.SearchError!=null ? @Model.SearchError :  "No matters are associated with this client.")</p>
+   
+}
